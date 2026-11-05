@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff1f5">
+  <title>Dear Zozo ♡</title>
+  <meta name="description" content="A little something from Ziad to Zozo.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--pink:#ed8fae;--deep:#a94770;--ink:#4e3441;--muted:#8e7180;--cream:#fffaf8;--line:#f3dce5;--lav:#eee8ff}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(circle at 12% 8%,#ffe2ec 0,transparent 28%),radial-gradient(circle at 90% 35%,#f1eaff 0,transparent 27%),var(--cream);color:var(--ink);font-family:"Cairo",sans-serif;overflow-x:hidden}
+    button{font:inherit;cursor:pointer} .en{font-family:"Playfair Display",serif;direction:ltr;unicode-bidi:isolate;letter-spacing:.2px}
+    .topbar{position:fixed;z-index:20;top:0;left:0;right:0;padding:13px 5vw;display:flex;align-items:center;justify-content:space-between;background:#fffaf8d9;backdrop-filter:blur(14px);border-bottom:1px solid #f5e5eb}
+    .brand{font-weight:800;color:var(--deep);font-size:15px}.brand span{color:var(--pink)}
+    .progress{height:4px;background:#f7e7ed;position:fixed;z-index:22;top:57px;left:0;right:0}.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#e78aaa,#b9a6e8);transition:width .3s}
+    .music{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 13px;color:var(--deep);font-size:12px;display:flex;gap:7px;align-items:center}
+    main{max-width:960px;margin:auto;padding:95px 20px 70px}
+    section{min-height:80vh;display:flex;align-items:center;justify-content:center;padding:55px 0;scroll-margin-top:70px}
+    .panel{width:min(100%,720px);background:#ffffffc9;border:1px solid #fff;box-shadow:0 24px 70px #9c58751a;border-radius:30px;padding:clamp(25px,6vw,58px);text-align:center;position:relative;overflow:hidden}
+    .eyebrow{font-size:12px;letter-spacing:2px;color:var(--deep);font-weight:800;text-transform:uppercase}
+    h1,h2{margin:12px 0 18px;line-height:1.3} h1{font-size:clamp(38px,8vw,68px);color:#9e456b} h2{font-size:clamp(27px,5vw,42px);color:#9e456b}
+    p{line-height:2;font-size:clamp(15px,2.5vw,18px);color:var(--muted);margin:10px 0}
+    .sub{max-width:520px;margin:0 auto 26px}.btn{border:0;border-radius:999px;padding:13px 25px;background:linear-gradient(110deg,#e98eae,#c2a8e9);color:white;font-weight:800;box-shadow:0 10px 25px #d68aaa40;transition:.2s;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+    .btn:hover{transform:translateY(-3px);box-shadow:0 15px 28px #d68aaa55}.btn.secondary{background:#fff;color:var(--deep);border:1px solid var(--line);box-shadow:none}
+    .hero-heart{font-size:64px;display:block;animation:beat 1.8s infinite;margin:10px auto 16px}
+    @keyframes beat{0%,100%{transform:scale(1)}12%{transform:scale(1.12)}24%{transform:scale(1)}}
+    .envelope{width:150px;height:105px;margin:28px auto;position:relative;background:#f3b6ca;border-radius:9px;box-shadow:0 12px 25px #c77b982e}
+    .envelope:before{content:"";position:absolute;inset:0;background:#f8d5e1;clip-path:polygon(0 0,50% 58%,100% 0);border-radius:9px 9px 0 0}
+    .envelope:after{content:"♡";position:absolute;top:44px;left:0;right:0;font-size:25px;color:#a94770}
+    .letter{background:#fffafc;border:1px solid var(--line);border-radius:20px;padding:25px;text-align:right;margin:22px auto;max-width:570px}
+    .letter p{color:#684b5a;font-size:16px}.signature{font-weight:800;color:var(--deep);text-align:left;margin-top:20px}
+    .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:28px}
+    .reason{background:linear-gradient(145deg,#fff,#fff5f8);border:1px solid var(--line);border-radius:20px;padding:22px 17px;transition:.25s;cursor:pointer}
+    .reason:hover{transform:translateY(-5px);box-shadow:0 15px 30px #c77b981c}.reason .emoji{font-size:30px}.reason h3{margin:8px 0 3px;color:#a34f73;font-size:17px}.reason p{font-size:14px;margin:0}
+    .choices{display:grid;gap:12px;max-width:430px;margin:25px auto 0}.choice{border:1px solid var(--line);background:white;color:#8f4c6a;padding:13px 18px;border-radius:16px;text-align:center;transition:.2s}.choice:hover,.choice.selected{background:#fff0f5;border-color:#e9a5bd;transform:scale(1.015)}
+    .response{min-height:54px;margin-top:18px;color:var(--deep);font-weight:700}
+    .coupon{border:2px dashed #e9a2bb;border-radius:22px;padding:28px 20px;margin:25px auto;max-width:460px;background:linear-gradient(135deg,#fff7fa,#fff)}
+    .coupon strong{font-size:20px;color:#a34f73;display:block;margin:10px 0}
+    .final-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:25px}
+    footer{text-align:center;color:#b18a9c;font-size:12px;padding:20px}
+    .heart{position:fixed;pointer-events:none;z-index:0;opacity:.24;animation:floatUp linear forwards}
+    @keyframes floatUp{from{transform:translateY(20px) rotate(0);opacity:0}15%{opacity:.35}to{transform:translateY(-110vh) rotate(35deg);opacity:0}}
+    .spark{color:#e8a0ba}.hidden{display:none!important}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#684354;color:white;padding:10px 18px;border-radius:999px;font-size:13px;opacity:0;transition:.3s;z-index:30;white-space:nowrap}.toast.show{opacity:1}
+    @media(max-width:600px){.topbar{padding:10px 16px}.progress{top:51px}main{padding:75px 14px 35px}section{min-height:75vh;padding:35px 0}.panel{border-radius:24px;padding:26px 18px}.cards{gap:10px}.reason{padding:17px 12px}.reason p{font-size:13px}.letter{padding:18px}.letter p{font-size:15px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand en">DEAR <span>ZOZO</span> ♡</div>
+    <button class="music" id="musicBtn" type="button">♫ <span id="musicLabel">Add our song</span></button>
+    <input id="musicFile" type="file" accept="audio/*" hidden>
+  </header>
+  <div class="progress"><i id="progressBar"></i></div>
+
+  <main>
+    <section id="welcome">
+      <div class="panel">
+        <div class="eyebrow en">A LITTLE SOMETHING FOR YOU</div>
+        <span class="hero-heart">♡</span>
+        <h1>إزيك يا زوزو؟</h1>
+        <p class="sub">في حد عايز يقولك كام حاجة... وعامل المفاجأة دي مخصوص عشانك.</p>
+        <button class="btn" onclick="go('letter')">Open your surprise <span>♡</span></button>
+        <p style="font-size:12px;margin-top:22px">From Ziad, with love</p>
+      </div>
+    </section>
+
+    <section id="letter">
+      <div class="panel">
+        <div class="eyebrow en">A LETTER FROM ZIAD</div>
+        <div class="envelope" aria-hidden="true"></div>
+        <h2>بصي يا زوزو...</h2>
+        <div class="letter">
+          <p>أنا عارف إني زعلتك، وعارف إن اللي حصل ضايقك، ومش هحاول أبرر لنفسي أو أقولك إن الموضوع مش مستاهل.</p>
+          <p>أنا آسف بجد إني خليتك تحسي بإحساس وحش، ومش عايزك تحسي إن مكانتك عندي عادية أو إنك زي أي حد.</p>
+          <p>إنتِ غالية عندي، ووجودك في حياتي فارق معايا، وأنا مقدّر إن تصرفي ضايقك.</p>
+          <p>عارف إن كلمة آسف لوحدها مش كفاية، وعشان كده أتمنى أقدر أثبتلك إني فهمت غلطتي وأكون أحسن بعد كده.</p>
+          <p>مش طالب منك تنسي أو تسامحيني في لحظتها، بس كان مهم عندي تعرفي إني فعلًا آسف.</p>
+          <div class="signature">من زيزو بتاعك،<br><span class="en">Ziad ❤️</span></div>
+        </div>
+        <button class="btn" onclick="go('reasons')">A little more ♡</button>
+      </div>
+    </section>
+
+    <section id="reasons">
+      <div class="panel">
+        <div class="eyebrow en">WHY YOU'RE MY ZOZO</div>
+        <h2>عارفة إنتِ مميزة ليه؟</h2>
+        <p>مش محتاجة مناسبة عشان أقولك كام حاجة حلوة فيكي.</p>
+        <div class="cards">
+          <article class="reason"><div class="emoji">🌷</div><h3 class="en">Your Smile</h3><p>ضحكتك من الحاجات اللي بتخليني أبتسم حتى لو يومي كان بايظ.</p></article>
+          <article class="reason"><div class="emoji">🦋</div><h3 class="en">Your Personality</h3><p>إنتِ ليكي طريقتك الخاصة اللي مستحيل تتكرر.</p></article>
+          <article class="reason"><div class="emoji">💬</div><h3 class="en">Our Random Talks</h3><p>أحلى كلام هو اللي بيبدأ من غير موضوع وينتهي بضحك.</p></article>
+          <article class="reason"><div class="emoji">💗</div><h3 class="en">Simply You</h3><p>مش محتاجة تعملي حاجة عشان تبقي مميزة، إنتِ كده أصلًا.</p></article>
+        </div>
+        <br><button class="btn" onclick="go('mood')">Next surprise ♡</button>
+      </div>
+    </section>
+
+    <section id="mood">
+      <div class="panel">
+        <div class="eyebrow en">THE ZOZO MOOD TEST</div>
+        <h2>لسه زعلانة مني قد إيه؟ 😂</h2>
+        <p>اختاري بصراحة... أنا مستعد نفسيًا (تقريبًا).</p>
+        <div class="choices">
+          <button class="choice" data-response="طب دي بداية مبشرة، هنحاول نصلح الدنيا 😂❤️">شوية كده 😒</button>
+          <button class="choice" data-response="حاضر يا ستي، أنا عارف إني محتاج مجهود كبير 😭">زعلانة جدًا 😡</button>
+          <button class="choice" data-response="وصلت الرسالة... هبطل رغي وأسيبلك وقتك 🥺">مش عايزة أسمع صوتك 😭</button>
+        </div>
+        <div class="response" id="moodResponse" aria-live="polite"></div>
+        <button class="btn" onclick="go('gift')">Continue ♡</button>
+      </div>
+    </section>
+
+    <section id="gift">
+      <div class="panel">
+        <div class="eyebrow en">A LITTLE GIFT</div>
+        <h2>Zozo's Special Coupon 🎀</h2>
+        <div class="coupon">
+          <div class="en" style="color:#b46a89;font-size:12px;letter-spacing:2px">OFFICIAL APOLOGY COUPON</div>
+          <strong>كوبون اعتذار رسمي من زياد</strong>
+          <p>ومعاه محاولات غير محدودة عشان أشوف ضحكتك تاني 😂❤️</p>
+          <div style="font-size:30px">♡</div>
+        </div>
+        <button class="btn" id="secretBtn">Reveal my secret</button>
+        <p id="secretText" class="hidden" style="color:#a34f73;font-weight:700">على فكرة... وحشتني رغاوينا وخناقاتنا التافهة ❤️</p>
+        <br><br><button class="btn secondary" onclick="go('final')">One last thing...</button>
+      </div>
+    </section>
+
+    <section id="final">
+      <div class="panel">
+        <div class="eyebrow en">ONE MORE CHANCE?</div>
+        <span class="hero-heart">💗</span>
+        <h2>تديني فرصة أصلح اللي حصل؟</h2>
+        <p class="sub">وأثبتلك إني فهمت غلطتي؟ 🥺</p>
+        <div class="final-buttons">
+          <button class="btn" id="yesBtn">موافقة يا زياد ❤️</button>
+          <button class="btn secondary" id="noBtn">لسه زعلانة</button>
+        </div>
+        <div class="response" id="finalResponse" aria-live="polite"></div>
+        <div id="closing" class="hidden">
+          <div class="letter" style="text-align:center">
+            <h2 style="font-size:27px">يا زوزو...</h2>
+            <p>أنا مش عايزك تفتكري الموقع ده بس، عايزك تعرفي إن زعلك فارق معايا وإنك شخص غالي عندي فعلًا.</p>
+            <p>آسف مرة تانية يا زوزو ❤️</p>
+            <div class="signature" style="text-align:center">With love,<br><span class="en">Ziad ❤️</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="en">MADE WITH CARE BY ZIAD · FOR ZOZO ♡</footer>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+  <audio id="audio" loop></audio>
+
+  <script>
+    const $ = s => document.querySelector(s);
+    function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
+    const bar=$('#progressBar');
+    window.addEventListener('scroll',()=>{const max=document.documentElement.scrollHeight-innerHeight;bar.style.width=(max>0?scrollY/max*100:0)+'%';},{passive:true});
+
+    document.querySelectorAll('.choice').forEach(btn=>btn.addEventListener('click',()=>{
+      document.querySelectorAll('.choice').forEach(b=>b.classList.remove('selected'));
+      btn.classList.add('selected');$('#moodResponse').textContent=btn.dataset.response;
+    }));
+    $('#secretBtn').addEventListener('click',()=>{$('#secretText').classList.remove('hidden');$('#secretBtn').textContent='Secret unlocked ♡';});
+    $('#yesBtn').addEventListener('click',()=>{$('#finalResponse').textContent='طب كده فرحتيني بجد يا زوزو ❤️ وإن شاء الله أكون قد الفرصة دي.';$('#closing').classList.remove('hidden');});
+    $('#noBtn').addEventListener('click',()=>{$('#finalResponse').textContent='حقك يا زوزو، خدي وقتك براحتك. مش هضغط عليكي، ومهم عندي إنك تكوني مرتاحة. ❤️';$('#closing').classList.remove('hidden');});
+
+    let heartClicks=0;
+    document.addEventListener('click',e=>{
+      if(e.target.closest('.hero-heart') || e.target.closest('.brand')){heartClicks++;if(heartClicks>=3){toast('بينّي وبينك... زوزو ملهاش بديل عند زيزو ❤️');heartClicks=0;}}
+    });
+    function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3200);}
+    setInterval(()=>{const h=document.createElement('span');h.className='heart';h.textContent=['♡','♥','✦'][Math.floor(Math.random()*3)];h.style.left=Math.random()*100+'vw';h.style.bottom='-30px';h.style.fontSize=(12+Math.random()*19)+'px';h.style.animationDuration=(8+Math.random()*7)+'s';document.body.appendChild(h);setTimeout(()=>h.remove(),16000);},1150);
+
+    const audio=$('#audio'), musicBtn=$('#musicBtn'), label=$('#musicLabel');
+    let songInitialized=false;
+    musicBtn.addEventListener('click',()=>{
+      if(!songInitialized){audio.src='music/our-song.mp3';songInitialized=true;}
+      if(audio.paused){audio.play().then(()=>label.textContent='Pause song').catch(()=>toast('زياد لسه مضفش الأغنية للموقع 🎵'));}else{audio.pause();label.textContent='Play our song';}
+    });
+    audio.addEventListener('error',()=>{label.textContent='Add our song';});
+    audio.addEventListener('ended',()=>label.textContent='Play our song');
+  </script>
+</body>
+</html>
