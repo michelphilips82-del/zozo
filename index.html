@@ -182,7 +182,7 @@
     const audio=$('#audio'), musicBtn=$('#musicBtn'), label=$('#musicLabel');
     let songInitialized=false;
     musicBtn.addEventListener('click',()=>{
-      if(!songInitialized){audio.src='music/our-song.mp3';songInitialized=true;}
+      if(!songInitialized){audio.src='our-song.mp3';songInitialized=true;}
       if(audio.paused){audio.play().then(()=>label.textContent='Pause song').catch(()=>toast('زياد لسه مضفش الأغنية للموقع 🎵'));}else{audio.pause();label.textContent='Play our song';}
     });
     audio.addEventListener('error',()=>{label.textContent='Add our song';});
